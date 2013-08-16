@@ -950,6 +950,9 @@ static inline NSAttributedString * NSAttributedStringBySettingColorFromContext(N
             }
         }
     } else {
+        if ([self.delegate respondsToSelector:@selector(attributedLabelDidNotSelectAnything:)]) {
+            [self.delegate attributedLabelDidNotSelectAnything:self];
+        }
         [super touchesEnded:touches withEvent:event];
     }
 }

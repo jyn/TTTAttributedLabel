@@ -327,4 +327,14 @@ extern NSString * const kTTTBackgroundCornerRadiusAttributeName;
  */
 - (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithTextCheckingResult:(NSTextCheckingResult *)result;
 
+/**
+ Tells the delegate that the user did not select anything.
+ 
+ @discussion This method is called if nothing was selected. It is useful if you need to know if the label was tapped but no data detector was triggered.
+ 
+ @param label The label whose link was selected.
+ */
+- (void)attributedLabelDidNotSelectAnything:(TTTAttributedLabel *)label;
+
+
 @end
